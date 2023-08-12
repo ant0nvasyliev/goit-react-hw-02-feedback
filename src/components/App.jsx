@@ -43,11 +43,11 @@ export class App extends Component {
       <Wrapper>
         <GlobalStyle />
         <Section title="Please leave feedback">
-          <FeedbackOptions handleAddStats={this.handleAddStats} />
+          <FeedbackOptions handleAddStats={this.handleAddStats} options={Object.keys(this.state)} />
         </Section>
         <Section title="Statistics">
           {totalFeedback === 0 ? (
-            <Notification />
+            <Notification message="There is no feedback." />
           ) : (
             <Statistics
               feedbackScore={this.state}
@@ -57,6 +57,6 @@ export class App extends Component {
           )}
         </Section>
       </Wrapper>
-    );
-  }
+    );
+  }
 }
