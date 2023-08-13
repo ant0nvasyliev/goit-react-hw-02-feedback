@@ -12,7 +12,7 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-
+// Додавання фідбеку по кліку
   handleAddStats = (type) => {
     this.setState((prevState) => {
       return {
@@ -20,12 +20,12 @@ export class App extends Component {
       };
     });
   };
-
+// Сума всіх фідбеків
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
-
+// Відсоток позитивних фідбеків
   calculatePositivePercentage = () => {
     const { good } = this.state;
     const totalFeedback = this.countTotalFeedback();
